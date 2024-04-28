@@ -26,8 +26,9 @@ const MainForm = () => {
             setError("All fields are required");
             return false;
         }
-        
-        if(!email.includes('@')){
+        // use regex to validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!emailRegex.test(email)){
             setError("Invalid email");
             return false;
         }
@@ -82,7 +83,7 @@ const MainForm = () => {
                     <div className="passwordInputContainer">    
                         
                         <input type={seePassword ? 'text' : 'password'} value={password} onChange={(e) => handlePasswordChange(e)} tabIndex="3" className="passwordInput"/>
-                        { <div onClick={handleSeePassword} tabIndex="4" className="showPassButton">{seePassword ? 'Hide':'Show'}</div>}
+                        { <div aria-label="Toggle password visibility" onClick={handleSeePassword} tabIndex="4" className="showPassButton">{seePassword ? 'Hide':'Show'}</div>}
                     </div>
                         <ul className="requirementsContainer">
                             <li className={passwordLength>=8 ? "completed" : ""}> 
@@ -99,7 +100,7 @@ const MainForm = () => {
                     </div>
                 
                 {error && <div className="error">{error}</div>}
-                <button type="submit" tabIndex="5" className="submitButton">Submit</button>
+                <button aria-label="Submit" type="submit" tabIndex="5" className="submitButton">Submit</button>
             </form>
         </div>
     );

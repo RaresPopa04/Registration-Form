@@ -26,7 +26,6 @@ const MainForm = () => {
             setError("All fields are required");
             return false;
         }
-        // use regex to validate email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if(!emailRegex.test(email)){
             setError("Invalid email");

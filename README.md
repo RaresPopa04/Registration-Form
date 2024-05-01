@@ -19,7 +19,7 @@ This project is a simple registration form built using React. It allows users to
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/RaresPopa04/Registration-Form.git`
-2. Navigate to the project directory:`cd react-registration-form`
+2. Navigate to the project directory:`cd Registration-Form`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
 5. Open your browser and visit `http://localhost:3000` to view the registration form.
